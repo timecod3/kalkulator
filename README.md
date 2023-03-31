@@ -1,1 +1,1 @@
-# imecod3-aplikasi-kalkulator-dengan-fitur-tombol-javascript
+# Aplikasi-kalkulator-dengan-fitur-tombol-javascript
