@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Kalkulator</title>
+</head>
+<body>
+  
+    <div class="container">
+        <div class="row">
+            <div class="teks">
+                  <h1>APLIKASI KALKULATOR SEDERHANA DENGAN FITUR TOMBOL BERBASIS JAVASCRIPT</h1>
+            </div>
+            <div class="col d-flex justify-content-center">
+              <br />
+
+              <div class="menuKalkulator">
+              <input type="text" id="hasil" class="form-control hasil" placeholder="0" disabled="disabled" />
+            
+              <div class="row">
+                <button onclick="kalkulator('aksi', 'c')" type="button" class="btn btn-dark btn-lg clear font-weight-light">C</button>
+                <button onclick="kalkulator('aksi', '/')" type="button" class="btn btn-dark btn-lg font-weight-light">/</button>
+                <button onclick="kalkulator('aksi', '*')" type="button" class="btn btn-dark btn-lg font-weight-light">x</button>
+              </div>
+
+              <div class="row">
+                <button onclick="kalkulator('nilai', 7)" type="button" class="btn btn-dark btn-lg font-weight-light">7</button>
+                <button onclick="kalkulator('nilai', 8)" type="button" class="btn btn-dark btn-lg font-weight-light">8</button>
+                <button onclick="kalkulator('nilai', 9)" type="button" class="btn btn-dark btn-lg font-weight-light">9</button>
+                <button onclick="kalkulator('aksi', '-')" type="button" class="btn btn-dark btn-lg font-weight-light">-</button>
+              </div>
+
+              <div class="row">
+                <button onclick="kalkulator('nilai', 4)" type="button" class="btn btn-dark btn-lg font-weight-light">4</button>
+                <button onclick="kalkulator('nilai', 5)" type="button" class="btn btn-dark btn-lg font-weight-light">5</button>
+                <button onclick="kalkulator('nilai', 6)" type="button" class="btn btn-dark btn-lg font-weight-light">6</button>
+                <button onclick="kalkulator('aksi', '+')" type="button" class="btn btn-dark btn-lg font-weight-light">+</button>
+              </div>
+
+              <div class="row">
+                <button onclick="kalkulator('nilai', 1)" type="button" class="btn btn-dark btn-lg font-weight-light">1</button>
+                <button onclick="kalkulator('nilai', 2)" type="button" class="btn btn-dark btn-lg font-weight-light">2</button>
+                <button onclick="kalkulator('nilai', 3)" type="button" class="btn btn-dark btn-lg font-weight-light">3</button>
+                <button onclick="kalkulator('aksi', '=')" type="button" class="btn btn-dark btn-lg enter">=</button>
+              </div>
+
+              <div class="row" style="margin-top: -60px">
+                <button onclick="kalkulator('nilai', 0)" type="button" class="btn btn-dark zero btn-lg font-weight-light">0</button>
+                <button onclick="kalkulator('aksi', '.')" type="button" class="btn btn-dark btn-lg font-weight-light">.</button>
+              </div>
+
+            </div>
+        </div>
+    </div>
+
+<!-- Javascript Ijer - ijeran -->
+<script>
+    function kalkulator(type, nilai){
+      if(type === 'aksi'){
+        if(nilai === 'c'){
+          document.getElementById('hasil').value = ''
+        }
+        if(nilai === '+' || nilai === '-' || nilai === '*' || nilai ==='/' || nilai === '.'){
+          document.getElementById('hasil').value += nilai
+        }
+        if(nilai === '='){
+          var nilai_bidang = eval(document.getElementById('hasil').value)
+          document.getElementById('hasil').value = nilai_bidang
+        }
+      }else if (type === 'nilai'){
+        document.getElementById('hasil').value += nilai
+      }
+    }
+
+  
+</script>
+
+</body>
+</html>
